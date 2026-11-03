@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#236b3b">
+  <title>AgriShop | Agricultural E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-art">
+      <div class="brand brand-light"><span class="brand-mark">🌿</span><span>AgriShop</span></div>
+      <div class="login-art-copy">
+        <p class="eyebrow">GROW BETTER, EVERY DAY</p>
+        <h1>Everything your farm needs, in one place.</h1>
+        <p>Shop trusted seeds, tools, fertilizers, and gardening essentials for every growing season.</p>
+        <div class="art-stats"><div><strong>100%</strong><span>Farm focused</span></div><div><strong>Easy</strong><span>Online shopping</span></div></div>
+      </div>
+      <div class="plant-decoration">🌱 🌾 🪴</div>
+    </div>
+    <div class="login-panel">
+      <div class="login-form-wrap">
+        <div class="brand brand-dark"><span class="brand-mark">🌿</span><span>AgriShop</span></div>
+        <p class="eyebrow green">WELCOME BACK</p>
+        <h2>Sign in to your account</h2>
+        
+        <form id="login-form">
+          <label for="role">Account type</label>
+          <div class="role-switch">
+            <label class="role-option"><input type="radio" name="role" value="customer" checked><span>🛒 Customer</span></label>
+            <label class="role-option"><input type="radio" name="role" value="seller"><span>🏪 Seller</span></label>
+          </div>
+          <label for="login-email">Email address</label>
+          <input id="login-email" type="email" placeholder="you@example.com" autocomplete="username" required>
+          <label for="login-password">Password</label>
+          <div class="password-wrap"><input id="login-password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button type="button" class="password-toggle" id="toggle-password" aria-label="Show password">Show</button></div>
+          <p id="login-error" class="form-error" role="alert"></p>
+          <button class="btn btn-primary btn-full" type="submit">Sign In <span>→</span></button>
+        </form>
+        <div class="demo-box">
+          <strong>Demo accounts</strong>
+          <p><b>Customer:</b> user@example.com / user123</p>
+          <p><b>Seller:</b> seller@example.com / seller123</p>
+          <button id="fill-demo" type="button" class="text-button">Fill selected demo account</button>
+        </div>
+        <p class="login-foot">Static frontend project · No real payments or database</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark">🌿</div><div><strong>AgriShop</strong><small>GROW WITH CONFIDENCE</small></div>
+        <button id="close-sidebar" class="icon-btn mobile-only" aria-label="Close menu">✕</button>
+      </div>
+      <div class="user-mini"><div class="avatar" id="sidebar-avatar">DC</div><div><strong id="sidebar-name">Darren Cajulao</strong><small id="sidebar-role">Customer account</small></div></div>
+      <nav id="customer-nav" class="side-nav">
+        <p class="nav-label">MAIN NAVIGATION</p>
+        <a href="#" class="menu-link active" data-section="home"><span>⌂</span>Home</a>
+        <a href="#" class="menu-link" data-section="products"><span>▦</span>Products</a>
+        <a href="#" class="menu-link" data-section="categories"><span>◈</span>Categories</a>
+        <p class="nav-label">SHOPPING</p>
+        <a href="#" class="menu-link" data-section="cart"><span>🛒</span>Cart <b class="nav-count" id="cart-count">0</b></a>
+        <a href="#" class="menu-link" data-section="orders"><span>▤</span>My Orders</a>
+        <a href="#" class="menu-link" data-section="wishlist"><span>♡</span>Wishlist</a>
+        <p class="nav-label">ACCOUNT</p>
+        <a href="#" class="menu-link" data-section="profile"><span>◎</span>Profile</a>
+        <a href="#" class="menu-link" data-section="settings"><span>⚙</span>Settings</a>
+        <p class="nav-label">SYSTEM</p>
+        <a href="#" class="menu-link" data-section="logout"><span>↪</span>Logout</a>
+      </nav>
+      <nav id="seller-nav" class="side-nav hidden">
+        <p class="nav-label">SELLER WORKSPACE</p>
+        <a href="#" class="menu-link active" data-section="seller-dashboard"><span>▦</span>Dashboard</a>
+        <a href="#" class="menu-link" data-section="manage-products"><span>📦</span>Manage Products</a>
+        <a href="#" class="menu-link" data-section="seller-orders"><span>▤</span>Orders</a>
+        <a href="#" class="menu-link" data-section="seller-profile"><span>◎</span>Seller Profile</a>
+        <p class="nav-label">SYSTEM</p>
+        <a href="#" class="menu-link" data-section="logout"><span>↪</span>Logout</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><span>🌱</span><strong>Keep growing!</strong><p>Small steps today create a better harvest tomorrow.</p></div><small>© 2026 AgriShop</small></div>
+    </aside>
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menu-toggle" class="icon-btn menu-toggle" aria-label="Open menu">☰</button>
+        <div class="breadcrumb"><span>AgriShop</span><b>/</b><strong id="page-heading">Home</strong></div>
+        <div class="topbar-right"><span class="status-dot"></span><span class="topbar-user" id="topbar-user">Darren Cajulao</span><div class="avatar avatar-small" id="topbar-avatar">DC</div></div>
+      </header>
+      <div class="page-content">
+        <!-- CUSTOMER HOME -->
+        <section id="home" class="content-section active-section">
+          <div class="hero-banner">
+            <div class="hero-copy"><span class="hero-tag">YOUR FARMING PARTNER</span><h1>Grow more.<br><em>Worry less.</em></h1><p>Find the essentials you need to help your garden and farm thrive — all in one convenient shop.</p><button class="btn btn-light" onclick="showSection('products')">Explore Products <span>→</span></button></div>
+            <div class="hero-illustration"><div class="sun"></div><div class="hill hill-one"></div><div class="hill hill-two"></div><div class="hero-plant">🌾</div><div class="hero-badge">Fresh season<br><strong>Fresh start!</strong></div></div>
+          </div>
+          <div class="welcome-row"><div><p class="eyebrow green">GOOD DAY, FARMER 👋</p><h2>Welcome to AgriShop</h2><p class="muted">Quality supplies to support every step of your growing journey.</p></div><div class="date-pill">🌤️ <span>Made for growers</span></div></div>
+          <div class="quick-stats"><div class="stat-card"><div class="stat-icon mint">🌱</div><div><span>Products available</span><strong id="home-product-count">8</strong></div></div><div class="stat-card"><div class="stat-icon peach">🧺</div><div><span>Items in your cart</span><strong id="home-cart-count">0</strong></div></div><div class="stat-card"><div class="stat-icon lilac">♡</div><div><span>Saved favorites</span><strong id="home-wishlist-count">3</strong></div></div></div>
+          <div class="section-heading"><div><p class="eyebrow green">HANDPICKED FOR YOU</p><h2>Featured products</h2></div><button class="text-button" onclick="showSection('products')">View all products →</button></div>
+          <div id="featured-grid" class="product-grid"></div>
+          <div class="promo-strip"><div class="promo-icon">🚜</div><div><strong>Ready for a better harvest?</strong><p>Get the right tools and supplies for your next growing season.</p></div><button class="btn btn-primary" onclick="showSection('categories')">Browse categories</button></div>
+        </section>
+
+        <section id="products" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">THE AGRISHOP COLLECTION</p><h1>All Products</h1><p class="muted">Practical essentials for your farm, garden, and home.</p></div><span class="result-count" id="product-result-count">8 products</span></div>
+          <div class="toolbar"><div class="search-box"><span>⌕</span><input id="product-search" type="search" placeholder="Search products..."></div><select id="category-filter" aria-label="Filter by category"><option value="all">All categories</option><option>Seeds</option><option>Fertilizers</option><option>Tools & Equipment</option><option>Garden Supplies</option></select></div>
+          <div id="products-grid" class="product-grid"></div>
+        </section>
+
+        <section id="categories" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">SHOP BY NEED</p><h1>Product Categories</h1><p class="muted">Find the right supplies for every part of your growing journey.</p></div></div>
+          <div id="category-grid" class="category-grid"></div>
+        </section>
+
+        <section id="cart" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">YOUR SELECTION</p><h1>Shopping Cart</h1><p class="muted">Review your items before placing a sample order.</p></div></div>
+          <div class="cart-layout"><div id="cart-items" class="panel cart-list"></div><aside class="panel summary-panel"><h3>Order Summary</h3><div class="summary-line"><span>Subtotal</span><strong id="cart-subtotal">₱0.00</strong></div><div class="summary-line"><span>Delivery</span><strong>Free</strong></div><div class="summary-line total-line"><span>Total</span><strong id="cart-total">₱0.00</strong></div><button id="checkout-btn" class="btn btn-primary btn-full">Place Sample Order →</button><p class="tiny-note">Demo checkout only. No payment will be collected.</p></aside></div>
+        </section>
+
+        <section id="orders" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">TRACK YOUR PURCHASES</p><h1>My Orders</h1><p class="muted">A record of your sample orders.</p></div></div>
+          <div id="customer-orders" class="order-list"></div>
+        </section>
+
+        <section id="wishlist" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">SAVED FOR LATER</p><h1>My Wishlist</h1><p class="muted">Keep your favorite farming essentials close at hand.</p></div></div>
+          <div id="wishlist-grid" class="product-grid"></div>
+        </section>
+
+        <section id="profile" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">YOUR ACCOUNT</p><h1>My Profile</h1><p class="muted">Your sample customer information.</p></div></div>
+          <div class="profile-layout"><div class="panel profile-cover"><div class="profile-avatar-large" id="profile-avatar">DC</div><h2 id="profile-name">Darren Cajulao</h2><p id="profile-email">user@example.com</p><span class="profile-badge">Customer account</span></div><div class="panel profile-details"><h3>Personal information</h3><div class="detail-row"><span>Full name</span><strong id="profile-full-name">Darren Cajulao</strong></div><div class="detail-row"><span>Email address</span><strong id="profile-email-detail">user@example.com</strong></div><div class="detail-row"><span>Contact number</span><strong>0912 345 6789</strong></div><div class="detail-row"><span>Account type</span><strong>Customer</strong></div><p class="tiny-note">This is sample information for the static project.</p></div></div>
+        </section>
+
+        <section id="settings" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">PREFERENCES</p><h1>Settings</h1><p class="muted">Manage the demo website preferences.</p></div></div>
+          <div class="panel settings-list"><div class="setting-item"><div><strong>Account Settings</strong><p>View your demo account information.</p></div><button class="btn btn-outline" onclick="showToast('Your account details are shown on the Profile page.')">Manage</button></div><div class="setting-item"><div><strong>Privacy Settings</strong><p>Cart and wishlist data are saved only in this browser.</p></div><button class="btn btn-outline" onclick="showToast('Your demo data stays in this browser.')">View details</button></div><div class="setting-item"><div><strong>Notifications</strong><p>Receive visual feedback when you shop.</p></div><button class="btn btn-outline" onclick="showToast('Notifications are enabled for this demo.')">Enabled</button></div></div>
+        </section>
+
+        <!-- SELLER SIDE -->
+        <section id="seller-dashboard" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">SELLER WORKSPACE</p><h1>Seller Dashboard</h1><p class="muted">Welcome back! Here is a quick overview of your store.</p></div><button class="btn btn-primary" onclick="showSection('manage-products')">＋ Manage Products</button></div>
+          <div class="seller-stats"><div class="stat-card"><div class="stat-icon mint">📦</div><div><span>Total products</span><strong id="seller-total-products">8</strong><small>In your catalog</small></div></div><div class="stat-card"><div class="stat-icon peach">🧾</div><div><span>Total orders</span><strong id="seller-total-orders">12</strong><small>Sample order data</small></div></div><div class="stat-card"><div class="stat-icon lilac">₱</div><div><span>Sample sales</span><strong id="seller-total-sales">₱8,450</strong><small>Demo summary</small></div></div></div>
+          <div class="panel table-panel"><div class="section-heading"><div><h2>Product inventory</h2><p class="muted">Your most recently listed products.</p></div><button class="text-button" onclick="showSection('manage-products')">View inventory →</button></div><div class="table-scroll"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th></tr></thead><tbody id="dashboard-product-table"></tbody></table></div></div>
+          <div class="panel seller-tip"><span>💡</span><div><strong>Seller tip</strong><p>Keep product prices and stock quantities up to date so customers can shop with confidence.</p></div></div>
+        </section>
+
+        <section id="manage-products" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">STORE CATALOG</p><h1>Manage Products</h1><p class="muted">Add, edit, and delete sample products. Changes are saved in this browser.</p></div></div>
+          <div class="panel product-form-panel"><div class="form-panel-heading"><div><h3 id="product-form-title">Add a product</h3><p class="muted">Enter the product details below.</p></div><span class="form-emoji">🌱</span></div><form id="seller-product-form" class="seller-product-form"><input type="hidden" id="edit-product-id"><div class="form-field"><label for="seller-product-name">Product name</label><input id="seller-product-name" required maxlength="80" placeholder="e.g. Tomato Seeds"></div><div class="form-field"><label for="seller-product-category">Category</label><select id="seller-product-category" required><option value="">Choose category</option><option>Seeds</option><option>Fertilizers</option><option>Tools & Equipment</option><option>Garden Supplies</option></select></div><div class="form-field"><label for="seller-product-price">Price (₱)</label><input id="seller-product-price" type="number" min="1" step="0.01" required placeholder="150.00"></div><div class="form-field"><label for="seller-product-stock">Stock quantity</label><input id="seller-product-stock" type="number" min="0" step="1" required placeholder="25"></div><div class="form-actions"><button type="button" id="cancel-edit" class="btn btn-outline hidden">Cancel edit</button><button type="submit" class="btn btn-primary" id="save-product-btn">＋ Save Product</button></div></form></div>
+          <div class="panel table-panel"><div class="section-heading"><div><h2>All products</h2><p class="muted"><span id="inventory-count">8</span> items in your catalog</p></div><div class="search-box compact"><span>⌕</span><input id="seller-search" type="search" placeholder="Search inventory..."></div></div><div class="table-scroll"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody id="inventory-table"></tbody></table></div></div>
+        </section>
+
+        <section id="seller-orders" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">SALES ACTIVITY</p><h1>Customer Orders</h1><p class="muted">Sample orders for the seller interface.</p></div></div>
+          <div id="seller-orders-list" class="order-list"></div>
+        </section>
+
+        <section id="seller-profile" class="content-section">
+          <div class="page-intro"><div><p class="eyebrow green">STORE INFORMATION</p><h1>Seller Profile</h1><p class="muted">Sample details for your AgriShop store.</p></div></div>
+          <div class="profile-layout"><div class="panel profile-cover"><div class="profile-avatar-large">🌿</div><h2>AgriShop Farm Supplies</h2><p>seller@example.com</p><span class="profile-badge">Verified demo seller</span></div><div class="panel profile-details"><h3>Store information</h3><div class="detail-row"><span>Seller name</span><strong>AgriShop Seller</strong></div><div class="detail-row"><span>Store name</span><strong>AgriShop Farm Supplies</strong></div><div class="detail-row"><span>Email address</span><strong>seller@example.com</strong></div><div class="detail-row"><span>Contact information</span><strong>0917 000 1234</strong></div><p class="tiny-note">Sample profile data for this frontend project.</p></div></div>
+        </section>
+
+        <section id="logout" class="content-section">
+          <div class="logout-card panel"><div class="logout-symbol">👋</div><p class="eyebrow green">SEE YOU AGAIN</p><h1>Ready to log out?</h1><p class="muted">You can sign back in anytime using the demo credentials.</p><button class="btn btn-primary" id="confirm-logout">Yes, log out</button><button class="btn btn-outline" onclick="showSection(currentRole === 'seller' ? 'seller-dashboard' : 'home')">Stay signed in</button></div>
+        </section>
+      </div>
+      <footer class="footer"><span>🌿 AgriShop</span><span>Static E-Commerce Website · Frontend Demo</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
